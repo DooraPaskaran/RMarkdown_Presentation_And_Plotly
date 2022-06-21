@@ -1,0 +1,21 @@
+---
+title: "Week3AssignmentPlotly"
+author: "Dooratharsini Paskaran"
+date: "5/14/2022"
+output: ioslides_presentation
+---
+
+## Plot created with plotly
+**mtcars dataset**
+```{r,echo=FALSE,results='hide',warning=FALSE,message=FALSE}
+library(plotly)
+```
+
+
+```{r plot, echo=FALSE,warning=FALSE}
+
+p <- plot_ly(mtcars, x= mtcars$wt, y= mtcars$mpg, mode="markers", color = as.factor(mtcars$cyl), size=mtcars$hp, type = "scatter")
+p <- layout(p, title = 'Cars Weight Vs. Miles Per Gallon for different cylinders and horsepower', plot_bgcolor = "#e5ecf6", xaxis = list(title = 'Weight(1000 lbs)'), yaxis = list(title = 'Miles Per Gallon'), legend = list(title=list(text='<b> No.of cylinders </b>')))
+p
+```
+
